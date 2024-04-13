@@ -3,7 +3,8 @@
 import inquirer from "inquirer";
 
 let myBalance: number = 100000;
-let myPin: number = 1;
+let myPin: number = 1234;
+console.log(`Pin Code is 1234`);
 
 let selectPin = await inquirer.prompt([
   {

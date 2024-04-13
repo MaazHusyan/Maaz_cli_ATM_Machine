@@ -1,7 +1,8 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
 let myBalance = 100000;
-let myPin = 1;
+let myPin = 1234;
+console.log(`Pin Code is 1234`);
 let selectPin = await inquirer.prompt([
     {
         name: "pin",
