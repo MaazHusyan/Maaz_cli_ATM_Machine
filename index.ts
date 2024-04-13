@@ -1,8 +1,9 @@
+#! /usr/bin/env node
+
 import inquirer from "inquirer";
 
 let myBalance: number = 100000;
 let myPin: number = 1;
-
 
 let selectPin = await inquirer.prompt([
   {
@@ -19,36 +20,33 @@ if (selectPin.pin === myPin) {
       name: "operation",
       message: "Select your operation",
       type: "list",
-      choices: ["Fast Cash","Withdraw", "Balance Check"],
+      choices: ["Fast Cash", "Withdraw", "Balance Check"],
     },
   ]);
-  
-  if (operationAns.operation === "Fast Cash"){
 
+  if (operationAns.operation === "Fast Cash") {
     let operationFastCash = await inquirer.prompt([
-        {
-            name:"fastCash",
-            message:"Select your Amount",
-            type:"list",
-            choices:[500,1000,5000,10000]
-        }
-    ])
-    if(operationFastCash.fastCash === 500){
-        myBalance -= operationFastCash.fastCash
-        console.log(`Your Current Balance in $${myBalance}`);
-    }else if(operationFastCash.fastCash === 1000){
-        myBalance -= operationFastCash.fastCash
-        console.log(`Your Current Balance in $${myBalance}`);
-    }else if(operationFastCash.fastCash === 5000){
-        myBalance -= operationFastCash.fastCash
-        console.log(`Your Current Balance in $${myBalance}`);
-    }else if(operationFastCash.fastCash === 10000){
-        myBalance -= operationFastCash.fastCash
-        console.log(`Your Current Balance in $${myBalance}`);
+      {
+        name: "fastCash",
+        message: "Select your Amount",
+        type: "list",
+        choices: [500, 1000, 5000, 10000],
+      },
+    ]);
+    if (operationFastCash.fastCash === 500) {
+      myBalance -= operationFastCash.fastCash;
+      console.log(`Your Current Balance in $${myBalance}`);
+    } else if (operationFastCash.fastCash === 1000) {
+      myBalance -= operationFastCash.fastCash;
+      console.log(`Your Current Balance in $${myBalance}`);
+    } else if (operationFastCash.fastCash === 5000) {
+      myBalance -= operationFastCash.fastCash;
+      console.log(`Your Current Balance in $${myBalance}`);
+    } else if (operationFastCash.fastCash === 10000) {
+      myBalance -= operationFastCash.fastCash;
+      console.log(`Your Current Balance in $${myBalance}`);
     }
-    
   }
-
 
   if (operationAns.operation === "Withdraw") {
     let amountAns = await inquirer.prompt([

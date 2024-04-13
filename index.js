@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 let myBalance = 100000;
 let myPin = 1;
@@ -24,8 +25,8 @@ if (selectPin.pin === myPin) {
                 name: "fastCash",
                 message: "Select your Amount",
                 type: "list",
-                choices: [500, 1000, 5000, 10000]
-            }
+                choices: [500, 1000, 5000, 10000],
+            },
         ]);
         if (operationFastCash.fastCash === 500) {
             myBalance -= operationFastCash.fastCash;
