@@ -1,9 +1,14 @@
 #! /usr/bin/env node
-import inquirer from "inquirer";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const inquirer_1 = __importDefault(require("inquirer"));
 let myBalance = 100000;
 let myPin = 1234;
 console.log(`Pin Code is 1234`);
-let selectPin = await inquirer.prompt([
+let selectPin = await inquirer_1.default.prompt([
     {
         name: "pin",
         message: "Enter your pin",
@@ -12,7 +17,7 @@ let selectPin = await inquirer.prompt([
 ]);
 if (selectPin.pin === myPin) {
     console.log("Correct pin code");
-    let operationAns = await inquirer.prompt([
+    let operationAns = await inquirer_1.default.prompt([
         {
             name: "operation",
             message: "Select your operation",
@@ -21,7 +26,7 @@ if (selectPin.pin === myPin) {
         },
     ]);
     if (operationAns.operation === "Fast Cash") {
-        let operationFastCash = await inquirer.prompt([
+        let operationFastCash = await inquirer_1.default.prompt([
             {
                 name: "fastCash",
                 message: "Select your Amount",
@@ -47,7 +52,7 @@ if (selectPin.pin === myPin) {
         }
     }
     if (operationAns.operation === "Withdraw") {
-        let amountAns = await inquirer.prompt([
+        let amountAns = await inquirer_1.default.prompt([
             {
                 name: "amount",
                 message: "Select your Amount",
